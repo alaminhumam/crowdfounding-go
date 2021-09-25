@@ -2,9 +2,11 @@ package main
 
 import (
 	"api-crowdfunding/auth"
+	"api-crowdfunding/campaign"
 	"api-crowdfunding/handler"
 	"api-crowdfunding/helper"
 	"api-crowdfunding/user"
+	"fmt"
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
 	"gorm.io/driver/mysql"
@@ -23,6 +25,13 @@ func main() {
 	}
 
 	userRepository := user.NewRepository(db)
+	campaignRepository := campaign.NewRepository(db)
+	campaigns, _ := campaignRepository.FindByUserID(1)
+	fmt.Println("debug")
+	for _, campaign := range campaigns {
+		fmt.Println(campaign.Name)
+		fmt.Println(campaign.CampaignImages[0].FileName)
+	}
 	userService := user.NewService(userRepository)
 	authService := auth.NewService()
 
