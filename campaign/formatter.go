@@ -18,7 +18,7 @@ type CampaignFormatter struct {
  	campaignFormatter.ID = campaign.ID
  	campaignFormatter.UsetID = campaign.UserID
  	campaignFormatter.Name = campaign.Name
- 	campaignFormatter.ShortDescription = campaign.SortDescription
+ 	campaignFormatter.ShortDescription = campaign.ShortDescription
  	campaignFormatter.GoalAmount = campaign.GoalAmount
  	campaignFormatter.CurrentAmount = campaign.CurrentAmount
  	campaignFormatter.Slug = campaign.Slug
@@ -71,7 +71,7 @@ type CampaignImageFormatter struct {
  	campaignDetailFormatter := CampaignDetailFormatter{}
  	campaignDetailFormatter.ID = campaign.ID
  	campaignDetailFormatter.Name = campaign.Name
- 	campaignDetailFormatter.ShortDescription = campaign.SortDescription
+ 	campaignDetailFormatter.ShortDescription = campaign.ShortDescription
  	campaignDetailFormatter.Description = campaign.Description
  	campaignDetailFormatter.GoalAmount = campaign.GoalAmount
 	campaignDetailFormatter.CurrentAmount = campaign.CurrentAmount
